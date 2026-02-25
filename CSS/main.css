@@ -188,6 +188,9 @@ nav ul li a {
 }
 
 .project-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-align: right;
 }
 
@@ -204,6 +207,16 @@ nav ul li a {
   color: #2e3440;
   text-decoration: none;
   transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.project-desc {
+  margin: 0.75rem 0 1.25rem 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-align: right;
+  max-width: 65ch;
+  margin-left: auto;
 }
 
 .project-link:hover {
@@ -242,9 +255,11 @@ nav ul li a {
 .fakeButtons {
   background-color: #ee6363;
 }
+
 .fakeMinimize {
   background-color: #fdb924;
 }
+
 .fakeZoom {
   background-color: #51cf66;
 }
@@ -268,12 +283,87 @@ p.terminal {
   width: 0;
 }
 
-.line1,
-.line4 {
-  color: white;
+.terminal-block {
+  margin-bottom: 2rem;
 }
+
+.line1 {
+  margin-bottom: 0.2rem;
+}
+
+.line2 {
+  margin: 0.1rem 0;
+}
+
+/* ---------------- TERMINAL COLORS ---------------- */
+
+.fakeScreen {
+  background-color: #4c566a;
+  padding: 1.5rem;
+  border-radius: 0 0 8px 8px;
+  overflow-x: auto;
+  color: #ffffff;
+}
+
+/* Prompt */
+.line1 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Base line */
 .line2 {
   color: #ebcb8b;
+  /* leicht gelblich */
+}
+
+/* JSON Key */
+.json-key {
+  color: #88c0d0;
+  font-weight: 600;
+}
+
+/* JSON String */
+.json-string {
+  color: #ebcb8b;
+}
+
+/* JSON Arrays */
+.json-array {
+  color: #ebcb8b;
+}
+
+/* Terminal Links */
+a.terminal {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+a.terminal:hover {
+  color: #ffffff;
+}
+
+/* Closing cursor line */
+.line4 {
+  color: #ffffff;
+}
+
+.indent-1 {
+  padding-left: 1rem;
+}
+
+.indent-2 {
+  padding-left: 2rem;
+}
+
+@media (max-width: 480px) {
+  .line2 {
+    word-break: break-word;
+  }
+
+  .indent-2 {
+    padding-left: 1rem;
+  }
 }
 
 /* Utilities */
@@ -313,14 +403,17 @@ section.contactIconsText {
 
 /* --- Animationen --- */
 @keyframes blink {
+
   0%,
   40% {
     opacity: 0;
   }
+
   50%,
   90% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -333,7 +426,7 @@ section.contactIconsText {
 }
 
 .typewriter-text {
-  font-size: clamp(2.3rem, 8vw, 5rem);
+  font-size: clamp(2.0rem, 8vw, 4.45rem);
   letter-spacing: clamp(2px, 1vw, 10px);
   border-right: 5px solid;
   width: 100%;
@@ -359,6 +452,7 @@ section.contactIconsText {
   h1 {
     font-size: 3.4rem;
   }
+
   .fakeMenu,
   .fakeScreen {
     width: 800px;
