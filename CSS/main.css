@@ -6,8 +6,9 @@
   padding: 0;
 }
 
-html, body {
-  font-family: "JetBrains Mono", monospace;
+html,
+body {
+  font-family: 'JetBrains Mono', monospace;
   font-size: 16px;
   height: 100%;
   min-height: 100%;
@@ -30,7 +31,9 @@ h1 {
   text-align: center;
 }
 
-h1.middle { padding-top: 5rem; }
+h1.middle {
+  padding-top: 5rem;
+}
 
 p {
   font-size: clamp(0.875rem, 2vw, 1rem);
@@ -56,15 +59,25 @@ a:focus {
   outline-offset: 2px;
 }
 
-a:hover { color: #339af0; }
+a:hover {
+  color: #339af0;
+}
 
-a.terminal { color: #00ffff; }
+a.terminal {
+  color: #00ffff;
+}
 
-a.terminal:hover { color: #ee6363; }
+a.terminal:hover {
+  color: #ee6363;
+}
 
-a.here { color: #ee6363; }
+a.here {
+  color: #ee6363;
+}
 
-a.here:hover { color: #339af0 }
+a.here:hover {
+  color: #339af0;
+}
 
 /* --- Basis Layout ----*/
 header {
@@ -108,7 +121,9 @@ nav a {
   font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-nav a:hover { color: #00bfff; }
+nav a:hover {
+  color: #00bfff;
+}
 
 nav a::after {
   content: '';
@@ -126,11 +141,13 @@ nav a:hover::after {
   transform: scaleX(1);
 }
 
-ul li { 
-  list-style-type: none; 
+ul li {
+  list-style-type: none;
 }
 
-nav ul li a { color: #4c566a; }
+nav ul li a {
+  color: #4c566a;
+}
 
 .flex-container-nav {
   display: flex;
@@ -158,18 +175,20 @@ nav ul li a { color: #4c566a; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color:#ffffff;
+  background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
   margin: 1.5rem auto;
   height: auto;
   min-height: 30vh;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project-content {
-  text-align: right; 
+  text-align: right;
 }
 
 .project-features {
@@ -197,7 +216,8 @@ nav ul li a { color: #4c566a; }
 }
 
 /* --- Terminal Style --- */
-.fakeMenu, .fakeScreen {
+.fakeMenu,
+.fakeScreen {
   margin: 0 auto;
   width: 100%;
 }
@@ -210,16 +230,24 @@ nav ul li a { color: #4c566a; }
   gap: 1rem;
 }
 
-.fakeButtons, .fakeMinimize, .fakeZoom {
+.fakeButtons,
+.fakeMinimize,
+.fakeZoom {
   height: 12px;
   width: 12px;
   border-radius: 50%;
   border: none;
 }
 
-.fakeButtons { background-color: #ee6363; }
-.fakeMinimize { background-color: #fdb924; }
-.fakeZoom { background-color: #51cf66; }
+.fakeButtons {
+  background-color: #ee6363;
+}
+.fakeMinimize {
+  background-color: #fdb924;
+}
+.fakeZoom {
+  background-color: #51cf66;
+}
 
 .fakeScreen {
   background-color: #4c566a;
@@ -240,12 +268,18 @@ p.terminal {
   width: 0;
 }
 
-.line1, .line4 { color: white; }
-.line2 { color: #ebcb8b; }
-
+.line1,
+.line4 {
+  color: white;
+}
+.line2 {
+  color: #ebcb8b;
+}
 
 /* Utilities */
-.center { text-align: center; }
+.center {
+  text-align: center;
+}
 
 .text-container {
   width: 100%;
@@ -253,7 +287,7 @@ p.terminal {
   margin: 0 auto;
 }
 
-.container-inline-block { 
+.container-inline-block {
   display: inline-block;
 }
 
@@ -279,13 +313,23 @@ section.contactIconsText {
 
 /* --- Animationen --- */
 @keyframes blink {
-  0%, 40% { opacity: 0; }
-  50%, 90% { opacity: 1; }
-  100% { opacity: 0; }
+  0%,
+  40% {
+    opacity: 0;
+  }
+  50%,
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes type {
-  from { width: 0; }
+  from {
+    width: 0;
+  }
 }
 
 .typewriter-text {
@@ -295,11 +339,15 @@ section.contactIconsText {
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
-  animation: type 1.5s steps(40), cursor 0.4s step-end infinite alternate;
+  animation:
+    type 1.5s steps(40),
+    cursor 0.4s step-end infinite alternate;
 }
 
-@keyframes cursor { 
-  50% { border-color: transparent; }
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .cursor {
@@ -308,8 +356,13 @@ section.contactIconsText {
 
 /* --- Media Queries --- */
 @media (min-width: 768px) {
-  h1 { font-size: 3.4rem; }
-  .fakeMenu, .fakeScreen { width: 800px; }
+  h1 {
+    font-size: 3.4rem;
+  }
+  .fakeMenu,
+  .fakeScreen {
+    width: 800px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -317,7 +370,8 @@ section.contactIconsText {
     padding: 0.5rem;
   }
 
-  header, nav ul {
+  header,
+  nav ul {
     flex-direction: column;
     align-items: center;
   }
