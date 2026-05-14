@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+/* Google Fonts loaded via <link> in HTML for better performance */
 
 * {
   box-sizing: border-box;
@@ -31,10 +31,6 @@ h1 {
   text-align: center;
 }
 
-h1.middle {
-  padding-top: 5rem;
-}
-
 p {
   font-size: clamp(0.875rem, 2vw, 1rem);
   color: #2e3440;
@@ -65,10 +61,11 @@ a:hover {
 
 a.terminal {
   color: #00ffff;
+  text-decoration: none;
 }
 
 a.terminal:hover {
-  color: #ee6363;
+  color: #ffffff;
 }
 
 a.here {
@@ -79,7 +76,7 @@ a.here:hover {
   color: #339af0;
 }
 
-/* --- Basis Layout ----*/
+/* --- Basis Layout --- */
 header {
   padding: 1rem;
   margin-bottom: 2rem;
@@ -165,10 +162,18 @@ nav ul li a {
 
 /* --- Projekt-Box --- */
 .project-container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 800px));
-  justify-content: center;
+  width: 100%;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-title {
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
 .project-card {
@@ -178,13 +183,28 @@ nav ul li a {
   background-color: #ffffff;
   border-radius: 8px;
   padding: 1.5rem;
-  margin: 1.5rem auto;
   height: auto;
   min-height: 30vh;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+}
+
+.project-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  flex: 0 1 45%;
+  margin-right: 1.5rem;
+}
+
+.project-header h2 {
+  width: 100%;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #2e3440;
+  margin: 0.25rem 0 0;
 }
 
 .project-content {
@@ -211,7 +231,7 @@ nav ul li a {
 }
 
 .project-desc {
-  margin: 0.75rem 0 1.25rem 0;
+  margin: 0.75rem 0 1.25rem;
   line-height: 1.6;
   font-size: 0.95rem;
   text-align: right;
@@ -226,6 +246,23 @@ nav ul li a {
 .project-link:focus {
   outline: 2px solid #339af0;
   outline-offset: 2px;
+}
+
+.button {
+  display: inline-block;
+  color: #5e81ac;
+  border: 1px solid #5e81ac;
+  padding: 0.35rem 0.65rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #5e81ac;
+  color: #eceff4;
 }
 
 /* --- Terminal Style --- */
@@ -269,52 +306,24 @@ nav ul li a {
   padding: 1.5rem;
   border-radius: 0 0 8px 8px;
   overflow-x: auto;
-}
-
-p.terminal {
-  position: relative;
-  left: 50%;
-  margin-left: -8.5em;
-  text-align: left;
-  font-size: 1.25em;
-  font-family: monospace;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
+  color: #ffffff;
 }
 
 .terminal-block {
   margin-bottom: 2rem;
 }
 
-.line1 {
-  margin-bottom: 0.2rem;
-}
-
-.line2 {
-  margin: 0.1rem 0;
-}
-
-/* ---------------- TERMINAL COLORS ---------------- */
-
-.fakeScreen {
-  background-color: #4c566a;
-  padding: 1.5rem;
-  border-radius: 0 0 8px 8px;
-  overflow-x: auto;
-  color: #ffffff;
-}
-
 /* Prompt */
 .line1 {
   color: #ffffff;
   font-weight: 600;
+  margin-bottom: 0.2rem;
 }
 
-/* Base line */
+/* Value */
 .line2 {
   color: #ebcb8b;
-  /* leicht gelblich */
+  margin: 0.1rem 0;
 }
 
 /* JSON Key */
@@ -331,16 +340,6 @@ p.terminal {
 /* JSON Arrays */
 .json-array {
   color: #ebcb8b;
-}
-
-/* Terminal Links */
-a.terminal {
-  color: #00ffff;
-  text-decoration: none;
-}
-
-a.terminal:hover {
-  color: #ffffff;
 }
 
 /* Closing cursor line */
@@ -371,19 +370,27 @@ a.terminal:hover {
   text-align: center;
 }
 
+main.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-flex {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .text-container {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem;
 }
 
 .container-inline-block {
   display: inline-block;
-}
-
-span {
-  color: #fff;
-  font-weight: bold;
 }
 
 .contactIcons {
@@ -397,8 +404,12 @@ span {
   transform: scale(1.1);
 }
 
-section.contactIconsText {
-  padding: 2rem;
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 2rem 0;
 }
 
 /* --- Animationen --- */
@@ -443,6 +454,7 @@ section.contactIconsText {
 }
 
 .cursor {
+  color: #fff;
   animation: blink 1.3s steps(2) infinite;
 }
 
@@ -455,6 +467,30 @@ section.contactIconsText {
   .fakeMenu,
   .fakeScreen {
     width: 800px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-header {
+    flex: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .project-content {
+    text-align: left;
+    width: 100%;
+  }
+
+  .project-desc {
+    text-align: left;
+    margin-left: 0;
   }
 }
 
