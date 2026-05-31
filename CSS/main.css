@@ -200,6 +200,10 @@ nav ul li a {
   margin-right: 1.5rem;
 }
 
+.project-header img {
+  object-fit: contain;
+}
+
 .project-header h2 {
   width: 100%;
   font-size: clamp(1rem, 2.5vw, 1.15rem);
