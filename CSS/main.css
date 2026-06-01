@@ -88,6 +88,9 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 footer {
@@ -470,7 +473,8 @@ main.center {
 
   .fakeMenu,
   .fakeScreen {
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
   }
 }
 
@@ -503,10 +507,26 @@ main.center {
     padding: 0.5rem;
   }
 
-  header,
+  header {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
   nav ul {
-    flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+  }
+
+  .typewriter-text {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    letter-spacing: 1px;
+  }
+
+  .fakeScreen {
+    padding: 1rem;
+  }
+
+  .terminal-block {
+    margin-bottom: 1.25rem;
   }
 
   footer {
